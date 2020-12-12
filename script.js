@@ -6,7 +6,10 @@ function convert(value) {
         if (age <= 21) {
             if (age < 10.5) {
                 year = 0
-                month = ((age / 10.5).toFixed(1)).split('.')[1]
+                month = (((parseFloat(age) / 10.5).toFixed(2)).split('.')[1]).split('')[0]
+                console.log(month)
+                document.getElementById('output').innerHTML = year
+                document.getElementById('month').innerHTML = month
 
             } else {
                 year = (age / 10.5).toFixed(2).split('.')[0]
@@ -35,7 +38,7 @@ function convert(value) {
 
 
     } else {
-        document.getElementById('body').innerHTML = '';
+        document.getElementById('ageHuman').value = '';
         document.getElementById('month').innerHTML = '____';
         document.getElementById('output').innerHTML = '____';
 
